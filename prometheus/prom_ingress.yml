@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: prometheus-ingress
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: "prometheus.olred.local"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: prometheus-service
+                port:
+                  number: 9090

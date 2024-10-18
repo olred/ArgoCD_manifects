@@ -32,10 +32,6 @@ metadata:
   labels:
     app: grafana
 spec:
-  securityContext:
-    fsGroup: 472
-    supplementalGroups:
-      - 0
   replicas: 1
   selector:
     matchLabels:
@@ -45,6 +41,10 @@ spec:
       labels:
         app: grafana
     spec:
+      securityContext:
+        fsGroup: 472
+        supplementalGroups:
+          - 0
       containers:
         - name: grafana
           image: grafana/grafana:11.2.2
@@ -55,7 +55,7 @@ spec:
             - containerPort: 3000
           volumeMounts:
             - name: grafana-volume
-              mountPath: /test
+              mountPath: /var/lib/grafana
       volumes:
         - name: grafana-volume
           persistentVolumeClaim:

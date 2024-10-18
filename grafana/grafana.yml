@@ -22,7 +22,7 @@ spec:
   storageClassName: longhorn
   resources:
     requests:
-      storage: 2Gi
+      storage: 1Gi
 
 ---
 apiVersion: apps/v1
@@ -32,6 +32,10 @@ metadata:
   labels:
     app: grafana
 spec:
+  securityContext:
+    fsGroup: 472
+    supplementalGroups:
+      - 0
   replicas: 1
   selector:
     matchLabels:

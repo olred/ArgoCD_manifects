@@ -1,53 +1,53 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: prometheus-service
+  name: victoria-service
 spec:
   selector:
-    app: prometheus
+    app: victoria
   ports:
     - protocol: TCP
-      port: 9090
-      targetPort: 9090
+      port: 8428
+      targetPort: 8428
 
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: prometheus-deployment
+  name: victoria-deployment
   labels:
-    app: prometheus
+    app: victoria
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: prometheus
+      app: victoria
   template:
     metadata:
       labels:
-        app: prometheus
+        app: victoria
     spec:
       containers:
-        - name: prometheus
-          image: prom/prometheus:v2.54.1
+        - name: victoria
+          image: victoriametrics/victoria-metrics:v1.102.6-enterprise
           ports:
-            - containerPort: 9090
+            - containerPort: 8428
 
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: prometheus-ingress
+  name: victoria-ingress
 spec:
   ingressClassName: traefik
   rules:
-    - host: "prometheus.olred.local"
+    - host: "victoria.olred.local"
       http:
         paths:
           - pathType: Prefix
             path: "/"
             backend:
               service:
-                name: prometheus-service
+                name: victoria-service
                 port:
-                  number: 9090
+                  number: 8428

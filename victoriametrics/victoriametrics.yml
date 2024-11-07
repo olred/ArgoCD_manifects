@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
         - name: victoria
-          image: victoriametrics/victoria-metrics:v1.102.6-enterprise
+          image: victoriametrics/victoria-metrics:stable
           ports:
             - containerPort: 8428
 

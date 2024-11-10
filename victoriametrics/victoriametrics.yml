@@ -63,10 +63,10 @@ spec:
           image: victoriametrics/victoria-metrics:stable
           ports:
             - containerPort: 8428
-          command: ["--promscrape.config=/victoriametrics/vmconfig.yml"]
+          # command: ["--promscrape.config=/victoriametrics/vmconfig.yml"]
           volumeMounts:
             - name: victoria-config
-              mountPath: /victoriametrics/
+              mountPath: /
       volumes:
         - name: victoria-config
           configMap:

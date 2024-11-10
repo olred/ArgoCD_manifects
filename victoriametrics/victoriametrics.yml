@@ -31,11 +31,9 @@ data:
       relabel_configs:
         - action: keep
           source_labels:
-          [
-            __meta_kubernetes_namespace,
-            __meta_kubernetes_service_name,
-            __meta_kubernetes_endpoint_port_name
-          ] 
+          - __meta_kubernetes_namespace,
+          - __meta_kubernetes_service_name,
+          - __meta_kubernetes_endpoint_port_name,
           regex: dev
           
 

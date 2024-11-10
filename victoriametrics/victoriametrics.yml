@@ -16,7 +16,7 @@ kind: ConfigMap
 metadata:
   name: victoria-config
 data:
-  scrape_configs:
+  scrape_configs: |
     - job_name: vmdb
       static_configs:
         - targets: [ "localhost:8428" ]

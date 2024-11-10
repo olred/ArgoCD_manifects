@@ -58,6 +58,9 @@ spec:
       labels:
         app: victoria
     spec:
+      securityContext:
+        supplementalGroups:
+          - 0
       containers:
         - name: victoria
           image: victoriametrics/victoria-metrics:stable
@@ -66,7 +69,7 @@ spec:
           # command: ["--promscrape.config=/victoria-metrics-data/vmconfig.yml"]
           volumeMounts:
             - name: victoria-config
-              mountPath: /victoria-metrics-data/
+              mountPath: /victoria-metrics-test/
       volumes:
         - name: victoria-config
           configMap:

@@ -25,6 +25,57 @@ spec:
       storage: 1Gi
 
 ---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-datasources
+data:
+  datasources.yml: |
+    apiVersion: 1
+    
+    datasources:
+      - name: victoriametrics
+        type: prometheus
+        orgId: 1
+        url: http://victoria-service:8428
+        isDefault: true
+        updateIntervalSeconds: 10
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-providers
+  dashboardproviders.yml: |
+    apiVersion: 1
+    providers:
+      - name: 'Metrics'
+        updateIntervalSeconds: 10
+        allowUpdates: true
+        orgId: 1
+        folder: ''
+        type: file
+        editable: true
+        options:
+          path: /var/lig/grafana/dashboards/
+  # dashboard.json: |
+  #   {
+  #     "annotations": {
+  #       "list": [
+  #         {
+  #           "builtIn": 1,
+  #           "datasource": {
+  #             "type": "prometheus"
+  #             "uid": "victoriametrics"
+  #           }
+  #         }
+  #       ]
+  #     }
+  #   }
+    
+
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -56,10 +107,22 @@ spec:
           volumeMounts:
             - name: grafana-volume
               mountPath: /var/lib/grafana
+            - name: grafana-datasources
+              mountPath: /etc/grafana/provisioning/datasources
+            - name: grafana-providers
+              mountPath: /var/lib/grafana/dashboards
       volumes:
         - name: grafana-volume
           persistentVolumeClaim:
             claimName: grafana-pvc
+
+        - name: grafana-datasources
+          configMap:
+            name: grafana-datasources
+        
+        - name: grafana-providers
+          configMap:
+            name: grafana-providers
 
 ---
 apiVersion: networking.k8s.io/v1

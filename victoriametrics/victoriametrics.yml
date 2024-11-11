@@ -34,7 +34,6 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: default
-    namespace: dev
 roleRef:
   kind: Role
   name: resources-reader

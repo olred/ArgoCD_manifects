@@ -16,7 +16,7 @@ kind: Role
 metadata:
   name: resources-reader
 rules:
-  - apiGroups: [""]
+  - apiGroups: ["rbac.authorization.k8s.io"]
     resources: ["services", "nodes", "pods", "endpoints"]
     verbs: ["get", "watch", "list"]
 ---

@@ -21,6 +21,7 @@ rules:
       - services
       - pods
       - nodes
+      - nodes/*
       - endpoints
     verbs:
       - list

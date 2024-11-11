@@ -13,6 +13,7 @@ spec:
 ---
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
+namespace: dev
 metadata:
   name: resources-reader
 rules:
@@ -29,11 +30,13 @@ rules:
 ---
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
+namespace: dev
 metadata:
   name: test
 subjects:
   - kind: ServiceAccount
     name: default
+    namespace: dev
 roleRef:
   kind: Role
   name: resources-reader
@@ -67,7 +70,7 @@ data:
                   __meta_kubernetes_endpoint_port_name,
               ]
             action: keep
-            regex: default;kubernetes;https;
+            regex: dev;kubernetes;https;
       - job_name: "kubernetes-nodes"
         scheme: https
         tls_config:
@@ -80,7 +83,7 @@ data:
           - action: labelmap
             regex: __meta_kubernetes_node_label_(.+)
           - target_label: __address__
-            replacement: kubernetes.default.svc:443
+            replacement: kubernetes.dev.svc:443
           - source_labels: [ __meta_kubernetes_node_name ]
             regex: (.+)
             target_label: __metrics_path__
@@ -97,7 +100,7 @@ data:
           - action: labelmap
             regex: __meta_kubernetes_node_label_(.+)
           - target_label: __address__
-            replacement: kubernetes.default.svc:443
+            replacement: kubernetes.dev.svc:443
           - source_labels: [ __meta_kubernetes_node_name ]
             regex: (.+)
             target_label: __metrics_path__

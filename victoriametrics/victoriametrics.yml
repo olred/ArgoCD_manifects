@@ -17,8 +17,8 @@ metadata:
   name: resources-reader
   namespace: dev
 rules:
-  - apiGroups: ["rbac.authorization.k8s.io"]
-    resources: ["services", "nodes", "pods", "endpoints"]
+  - apiGroups: ["*"]
+    resources: ["*"]
     verbs: ["get", "watch", "list"]
 ---
 kind: RoleBinding

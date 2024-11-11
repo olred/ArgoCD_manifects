@@ -34,7 +34,7 @@ metadata:
   name: test
   namespace: dev
 subjects:
-  - kind: User
+  - kind: ServiceAccount
     name: default
     namespace: dev
 roleRef:

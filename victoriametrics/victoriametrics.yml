@@ -17,9 +17,13 @@ metadata:
   name: resources-reader
   namespace: dev
 rules:
-  - apiGroups: ["*"]
-    resources: ["*"]
-    verbs: ["get", "watch", "list"]
+  - apiGroups: [""]
+    resources:
+      - services
+      - pods
+      - nodes
+      - endpoints
+    verbs: ["get", "list"]
 ---
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
@@ -27,9 +31,8 @@ metadata:
   name: test
   namespace: dev
 subjects:
-  - kind: ServiceAccount
+  - kind: User
     name: default
-    apiGroup: ""
     namespace: dev
 roleRef:
   kind: Role

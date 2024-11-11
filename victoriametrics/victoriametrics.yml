@@ -11,9 +11,8 @@ spec:
       targetPort: 8428
 
 ---
-kind: Role
+kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
-namespace: dev
 metadata:
   name: resources-reader
 rules:
@@ -30,13 +29,11 @@ rules:
 ---
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
-namespace: dev
 metadata:
   name: test
 subjects:
   - kind: ServiceAccount
     name: default
-    namespace: dev
 roleRef:
   kind: Role
   name: resources-reader

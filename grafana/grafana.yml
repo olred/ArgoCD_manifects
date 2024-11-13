@@ -98,7 +98,7 @@ spec:
               mountPath: /etc/grafana/provisioning/datasources
             - name: grafana-providers
               mountPath: /etc/grafana/provisioning/dashboards
-            - name: grafana-kube_dashboard
+            - name: grafana-kube-dashboard
               mountPath: /var/lib/grafana/dashboards
       volumes:
         - name: grafana-volume

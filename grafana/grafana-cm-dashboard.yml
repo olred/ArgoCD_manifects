@@ -24,6 +24,12 @@ data:
         "version": "7.3.3"
       },
       {
+        "type": "panel",
+        "id": "graph",
+        "name": "Graph",
+        "version": ""
+      },
+      {
         "type": "datasource",
         "id": "prometheus",
         "name": "victoriametrics",

@@ -34,7 +34,7 @@ data:
     apiVersion: 1
     
     datasources:
-      - name: victoriametrics
+      - name: VictoriaMetrics
         type: prometheus
         orgId: 1
         url: http://victoria-service:8428

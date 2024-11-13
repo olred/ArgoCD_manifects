@@ -8,7 +8,7 @@ data:
     {
     "__inputs": [
       {
-        "name": "victoriametrics",
+        "name": "DS_PROMETHEUS",
         "label": "Prometheus",
         "description": "",
         "type": "datasource",
@@ -32,7 +32,7 @@ data:
       {
         "type": "datasource",
         "id": "prometheus",
-        "name": "victoriametrics",
+        "name": "Prometheus",
         "version": "1.0.0"
       },
       {
@@ -65,7 +65,7 @@ data:
     "panels": [
       {
         "collapsed": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -82,7 +82,7 @@ data:
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "decimals": 2,
         "editable": true,
         "error": false,
@@ -199,7 +199,7 @@ data:
       },
       {
         "collapsed": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -220,7 +220,7 @@ data:
           "rgba(237, 129, 40, 0.89)",
           "rgba(245, 54, 54, 0.9)"
         ],
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "editable": true,
         "error": false,
         "fieldConfig": {
@@ -311,7 +311,7 @@ data:
           "rgba(237, 129, 40, 0.89)",
           "rgba(245, 54, 54, 0.9)"
         ],
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "decimals": 2,
         "editable": true,
         "error": false,
@@ -403,7 +403,7 @@ data:
           "rgba(237, 129, 40, 0.89)",
           "rgba(245, 54, 54, 0.9)"
         ],
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "decimals": 2,
         "editable": true,
         "error": false,
@@ -497,7 +497,7 @@ data:
           "rgba(237, 129, 40, 0.89)",
           "rgba(245, 54, 54, 0.9)"
         ],
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "decimals": 2,
         "editable": true,
         "error": false,
@@ -589,7 +589,7 @@ data:
           "rgba(237, 129, 40, 0.89)",
           "rgba(245, 54, 54, 0.9)"
         ],
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "decimals": 2,
         "editable": true,
         "error": false,
@@ -681,7 +681,7 @@ data:
           "rgba(237, 129, 40, 0.89)",
           "rgba(245, 54, 54, 0.9)"
         ],
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "decimals": 2,
         "editable": true,
         "error": false,
@@ -773,7 +773,7 @@ data:
           "rgba(237, 129, 40, 0.89)",
           "rgba(245, 54, 54, 0.9)"
         ],
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "decimals": 2,
         "editable": true,
         "error": false,
@@ -865,7 +865,7 @@ data:
           "rgba(237, 129, 40, 0.89)",
           "rgba(245, 54, 54, 0.9)"
         ],
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "decimals": 2,
         "editable": true,
         "error": false,
@@ -957,7 +957,7 @@ data:
           "rgba(237, 129, 40, 0.89)",
           "rgba(245, 54, 54, 0.9)"
         ],
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "decimals": 2,
         "editable": true,
         "error": false,
@@ -1042,7 +1042,7 @@ data:
       },
       {
         "collapsed": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -1059,7 +1059,7 @@ data:
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "decimals": 3,
         "editable": true,
         "error": false,
@@ -1168,7 +1168,7 @@ data:
       },
       {
         "collapsed": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -1185,7 +1185,7 @@ data:
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "decimals": 3,
         "editable": true,
         "error": false,
@@ -1295,7 +1295,7 @@ data:
       },
       {
         "collapsed": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -1312,7 +1312,7 @@ data:
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "decimals": 3,
         "editable": true,
         "error": false,
@@ -1444,7 +1444,7 @@ data:
       },
       {
         "collapsed": true,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -1456,7 +1456,7 @@ data:
           {
             "aliasColors": {},
             "bars": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "VictoriaMetrics",
             "decimals": 3,
             "editable": true,
             "error": false,
@@ -1546,7 +1546,7 @@ data:
       },
       {
         "collapsed": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -1563,7 +1563,7 @@ data:
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "decimals": 2,
         "editable": true,
         "error": false,
@@ -1672,7 +1672,7 @@ data:
       },
       {
         "collapsed": true,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -1684,7 +1684,7 @@ data:
           {
             "aliasColors": {},
             "bars": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "VictoriaMetrics",
             "decimals": 2,
             "editable": true,
             "error": false,
@@ -1773,7 +1773,7 @@ data:
       },
       {
         "collapsed": true,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -1785,7 +1785,7 @@ data:
           {
             "aliasColors": {},
             "bars": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "VictoriaMetrics",
             "decimals": 2,
             "editable": true,
             "error": false,
@@ -1892,7 +1892,7 @@ data:
       },
       {
         "collapsed": true,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -1904,7 +1904,7 @@ data:
           {
             "aliasColors": {},
             "bars": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "VictoriaMetrics",
             "decimals": 2,
             "editable": true,
             "error": false,
@@ -1993,7 +1993,7 @@ data:
       },
       {
         "collapsed": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -2010,7 +2010,7 @@ data:
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "decimals": 2,
         "editable": true,
         "error": false,
@@ -2126,7 +2126,7 @@ data:
       },
       {
         "collapsed": true,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -2138,7 +2138,7 @@ data:
           {
             "aliasColors": {},
             "bars": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "VictoriaMetrics",
             "decimals": 2,
             "editable": true,
             "error": false,
@@ -2278,7 +2278,7 @@ data:
       },
       {
         "collapsed": true,
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -2290,7 +2290,7 @@ data:
           {
             "aliasColors": {},
             "bars": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "VictoriaMetrics",
             "decimals": 2,
             "editable": true,
             "error": false,
@@ -2398,7 +2398,7 @@ data:
         {
           "allValue": ".*",
           "current": {},
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "VictoriaMetrics",
           "definition": "",
           "error": null,
           "hide": 0,

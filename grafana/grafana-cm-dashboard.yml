@@ -32,7 +32,7 @@ data:
       {
         "type": "datasource",
         "id": "prometheus",
-        "name": "Prometheus",
+        "name": "victoriametrics",
         "version": "1.0.0"
       },
       {

@@ -165,7 +165,7 @@ spec:
           volumeMounts:
             - name: victoria-config
               mountPath: /victoria-metrics-test/
-            - name: victoria-data-pvc
+            - name: victoria-data
               mountPath: /victoria-metrics-data/
           args:
             - --promscrape.config=/victoria-metrics-test/vmconfig.yml

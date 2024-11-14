@@ -18,7 +18,7 @@ metadata:
   name: grafana-pvc
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   storageClassName: longhorn
   resources:
     requests:

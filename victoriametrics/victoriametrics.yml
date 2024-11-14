@@ -169,6 +169,13 @@ spec:
               mountPath: /victoria-metrics-data/
           args:
             - --promscrape.config=/victoria-metrics-test/vmconfig.yml
+          resources:
+            requests:
+              memory: "600Mi"
+              cpu: "5m"
+            limits:
+              memory: "600Mi"
+              cpu: "5m"
       volumes:
         - name: victoria-config
           configMap:

@@ -164,7 +164,7 @@ spec:
             - containerPort: 8428
           volumeMounts:
             - name: victoria-config
-              mountPath: /victoria-metrics-data/
+              mountPath: /victoria-metrics-test/
             - name: victoria-data-pvc
               mountPath: /victoria-metrics-data/
           args:

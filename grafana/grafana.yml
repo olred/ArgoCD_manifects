@@ -100,13 +100,13 @@ spec:
               mountPath: /etc/grafana/provisioning/dashboards
             - name: grafana-kube-dashboard
               mountPath: /var/lib/grafana/dashboards
-          resources:
-            requests:
-              memory: "150Mi"
-              cpu: "10m"
-            limits:
-              memory: "200Mi"
-              cpu: "10m"
+          # resources:
+          #   requests:
+          #     memory: "150Mi"
+          #     cpu: "10m"
+          #   limits:
+          #     memory: "200Mi"
+          #     cpu: "10m"
       volumes:
         - name: grafana-volume
           persistentVolumeClaim:

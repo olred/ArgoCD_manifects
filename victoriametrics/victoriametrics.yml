@@ -181,7 +181,7 @@ spec:
           configMap:
             name: victoria-config
         - name: victoria-data
-          persistVolumeClaim:
+          persistentVolumeClaim:
             claimName: victoria-data-pvc
 
 ---

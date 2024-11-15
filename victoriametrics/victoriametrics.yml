@@ -182,7 +182,7 @@ spec:
             name: victoria-config
         - name: victoria-data
           persistVolumeClaim:
-            claimMame: victoria-data-pvc
+            claimName: victoria-data-pvc
 
 ---
 apiVersion: networking.k8s.io/v1

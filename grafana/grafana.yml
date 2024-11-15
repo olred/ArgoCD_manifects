@@ -102,11 +102,11 @@ spec:
               mountPath: /var/lib/grafana/dashboards
           resources:
             requests:
-              memory: "300Mi"
-              cpu: "10m"
+              memory: "500Mi"
+              cpu: "50m"
             limits:
-              memory: "400Mi"
-              cpu: "10m"
+              memory: "500Mi"
+              cpu: "50m"
       volumes:
         - name: grafana-volume
           persistentVolumeClaim:

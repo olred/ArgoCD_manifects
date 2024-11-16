@@ -74,16 +74,6 @@ spec:
   selector:
     matchLabels:
       app: grafana
-  affinity:
-    podAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        - labelSelector:
-            matchExpressions:
-              - key: app
-                operator: In
-                values:
-                  - grafana
-          topologyKey: "kubernetes.io/hostname"
   template:
     metadata:
       labels:
@@ -93,6 +83,16 @@ spec:
         fsGroup: 472
         supplementalGroups:
           - 0
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - grafana
+              topologyKey: "kubernetes.io/hostname"
       containers:
         - name: grafana
           image: grafana/grafana:11.2.2

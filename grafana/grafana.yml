@@ -75,15 +75,15 @@ spec:
     matchLabels:
       app: grafana
   affinity:
-  podAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      - labelSelector:
-          matchExpressions:
-            - key: app
-              operator: In
-              values:
-                - grafana
-        topologyKey: "kubernetes.io/hostname"
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: app
+                operator: In
+                values:
+                  - grafana
+          topologyKey: "kubernetes.io/hostname"
   template:
     metadata:
       labels:

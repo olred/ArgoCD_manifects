@@ -115,7 +115,7 @@ spec:
               memory: "500Mi"
               cpu: "50m"
             limits:
-              memory: "600Mi"
+              memory: "500Mi"
               cpu: "50m"
       volumes:
         - name: grafana-volume

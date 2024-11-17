@@ -157,6 +157,19 @@ spec:
       securityContext:
         supplementalGroups:
           - 0
+      affinity:
+        podAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                  labelSelector:
+                    matchExpressions:
+                      - key: app
+                        operator: In
+                        values:
+                          - victoria
+                  topologyKey: "kubernetes.io/hostname"
+
       containers:
         - name: victoria
           image: victoriametrics/victoria-metrics:stable

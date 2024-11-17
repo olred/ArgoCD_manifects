@@ -172,10 +172,10 @@ spec:
           resources:
             requests:
               memory: "600Mi"
-              cpu: "5m"
+              cpu: "30m"
             limits:
-              memory: "600Mi"
-              cpu: "5m"
+              memory: "1G"
+              cpu: "50m"
       volumes:
         - name: victoria-config
           configMap:
